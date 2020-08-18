@@ -10,7 +10,7 @@ class AssetsDBHelper(private val context: Context) {
 
     companion object {
 
-        private val DB_NAME = "quran.db"
+        private const val DB_NAME = "quran.db"
     }
 
     fun openDatabase() {

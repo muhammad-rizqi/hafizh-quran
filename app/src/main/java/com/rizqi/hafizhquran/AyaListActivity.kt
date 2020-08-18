@@ -14,7 +14,7 @@ class AyaListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aya_list)
 
-        val sectionsPagerAdapter = AyaFragmentAdapter(this, supportFragmentManager)
+        val sectionsPagerAdapter = AyaFragmentAdapter(supportFragmentManager)
 
         pager.adapter = sectionsPagerAdapter
         val page = intent.getIntExtra(EXTRA_SURA_INDEX, 0)

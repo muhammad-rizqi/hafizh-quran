@@ -15,19 +15,19 @@ import kotlinx.coroutines.withContext
 class AyaViewModel(application: Application) : AndroidViewModel(application) {
     private val mContext = application
 
-    val quran_aya = MutableLiveData<Aya>()
-    val quran_sura = MutableLiveData<ArrayList<Aya>>()
-    val quran_translate_sura = MutableLiveData<ArrayList<Translated>>()
+    private val quranAya = MutableLiveData<Aya>()
+    private val quranSura = MutableLiveData<ArrayList<Aya>>()
+    val quranTranslateSura = MutableLiveData<ArrayList<Translated>>()
 
-    val database = AyaRoomDatabase.getDatabase(mContext)
-    val dao = database.getUserDao()
+    private val database = AyaRoomDatabase.getDatabase(mContext)
+    private val dao = database.getUserDao()
 
     fun getAyaBySura(sura: Int) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 try {
                     val ayaList = ArrayList(dao.getSura(sura))
-                    quran_sura.postValue(ayaList)
+                    quranSura.postValue(ayaList)
                 } catch (throwable: Throwable) {
                     getError(throwable)
                 }
@@ -51,7 +51,7 @@ class AyaViewModel(application: Application) : AndroidViewModel(application) {
                         )
                         result.add(translated)
                     }
-                    quran_translate_sura.postValue(result)
+                    quranTranslateSura.postValue(result)
                 } catch (throwable: Throwable) {
                     getError(throwable)
                 }
@@ -64,7 +64,7 @@ class AyaViewModel(application: Application) : AndroidViewModel(application) {
             withContext(Dispatchers.IO) {
                 try {
                     val result = dao.getByAya(aya)
-                    quran_aya.postValue(result)
+                    quranAya.postValue(result)
                 } catch (throwable: Throwable) {
                     getError(throwable)
                 }

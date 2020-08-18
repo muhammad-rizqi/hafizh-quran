@@ -19,7 +19,7 @@ class AyaFragment : Fragment() {
     lateinit var adapter: TranslateAdapter
 
     companion object {
-        private val ARG_SECTION_NUMBER = "section_number"
+        private const val ARG_SECTION_NUMBER = "section_number"
         fun newInstance(index: Int): AyaFragment {
             val fragment = AyaFragment()
             val bundle = Bundle()
@@ -48,7 +48,7 @@ class AyaFragment : Fragment() {
         ayaViewModel = ViewModelProvider(this).get(AyaViewModel::class.java)
         ayaViewModel.getTranslateBySura(index)
         activity?.let {
-            ayaViewModel.quran_translate_sura.observe(it, Observer { items ->
+            ayaViewModel.quranTranslateSura.observe(it, Observer { items ->
                 if (items != null) {
                     val divider =
                         DividerItemDecoration(rv_list.context, DividerItemDecoration.VERTICAL)
