@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.rizqi.hafizhquran.adapter.SuraListAdapter
+import com.rizqi.hafizhquran.helper.AssetsDBHelper
 import com.rizqi.hafizhquran.model.Suras
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers

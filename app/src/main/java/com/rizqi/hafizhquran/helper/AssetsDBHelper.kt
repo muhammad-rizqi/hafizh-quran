@@ -1,4 +1,4 @@
-package com.rizqi.hafizhquran
+package com.rizqi.hafizhquran.helper
 
 import android.content.Context
 import android.util.Log

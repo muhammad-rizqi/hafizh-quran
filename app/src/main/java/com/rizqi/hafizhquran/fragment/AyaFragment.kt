@@ -1,4 +1,4 @@
-package com.rizqi.hafizhquran
+package com.rizqi.hafizhquran.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.rizqi.hafizhquran.R
 import com.rizqi.hafizhquran.adapter.TranslateAdapter
 import com.rizqi.hafizhquran.viewmodel.AyaViewModel
 import kotlinx.android.synthetic.main.fragment_aya.*
